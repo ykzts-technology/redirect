@@ -20,18 +20,15 @@ jobs:
       with:
         go-version: 1.12
 
-    - uses: actions/gcloud/auth@master
+    - name: Login to GCR
       env:
         GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+      run: |
+        echo "$GCLOUD_AUTH" | \
+          base64 --decode | \
+          docker login -u _json_key --password-stdin https://asia.gcr.io
 
-    - uses: actions/gcloud/cli@master
-      with:
-        args: auth configure-docker -q
-
-    - uses: actions/gcloud/cli@master
+    - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        entrypoint: /bin/bash
-        args: |
-          -c "curl -sL https://git.io/goreleaser | bash"
+      run: curl -sL https://git.io/goreleaser | bash
