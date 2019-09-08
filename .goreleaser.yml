@@ -1,0 +1,37 @@
+env:
+- GO111MODULE=on
+before:
+  hooks:
+  - go mod download
+builds:
+- main: main.go
+  binary: redirect
+  env:
+  - CGO_ENABLED=0
+  goos:
+  - linux
+  goarch:
+  - amd64
+archives:
+- replacements:
+    linux: Linux
+    amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+dockers:
+- image_templates:
+  - "asia.gcr.io/ykzts-technology/redirect:latest"
+  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}"
+  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}"
+  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
+  dockerfile: Dockerfile
+  binaries:
+  - redirect

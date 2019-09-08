@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  pull_request:
+    branches:
+    - '!*'
+  push:
+    branches:
+    - '!*'
+    tags:
+    - 'v*'
+
+jobs:
+  release:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-go@v1
+      with:
+        go-version: 1.12
+
+    - uses: actions/gcloud/auth@master
+      env:
+        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+
+    - uses: actions/gcloud/cli@master
+      with:
+        args: auth configure-docker -q
+
+    - uses: actions/gcloud/cli@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        entrypoint: /bin/bash
+        args: |
+          -c "curl -sL https://git.io/goreleaser | bash"
