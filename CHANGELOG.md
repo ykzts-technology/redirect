@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.5](https://github.com/ykzts-technology/redirect/compare/v2.0.4...v2.0.5) (2022-04-21)
+
+
+### Bug Fixes
+
+* fix invalid syntax ([#16](https://github.com/ykzts-technology/redirect/issues/16)) ([3e5bd36](https://github.com/ykzts-technology/redirect/commit/3e5bd365e8d5017bf339bdb02de10049c3d75ef2))
+
 ### [2.0.4](https://github.com/ykzts-technology/redirect/compare/v2.0.3...v2.0.4) (2022-04-21)
 
 
