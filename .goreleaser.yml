@@ -1,37 +1,42 @@
-env:
-- GO111MODULE=on
 before:
   hooks:
-  - go mod download
+    - go mod download
 builds:
-- main: main.go
-  binary: redirect
-  env:
-  - CGO_ENABLED=0
-  goos:
-  - linux
-  goarch:
-  - amd64
+  - main: .
+    binary: redirect
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
 archives:
-- replacements:
-    linux: Linux
-    amd64: x86_64
+  - replacements:
+      linux: Linux
+      amd64: x86_64
 checksum:
-  name_template: 'checksums.txt'
+  name_template: checksums.txt
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: {{ .Tag }}-next
 changelog:
-  sort: asc
-  filters:
-    exclude:
-    - '^docs:'
-    - '^test:'
+  skip: true
 dockers:
-- image_templates:
-  - "asia.gcr.io/ykzts-technology/redirect:latest"
-  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}"
-  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}"
-  - "asia.gcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
-  dockerfile: Dockerfile
-  binaries:
-  - redirect
+  - id: redirect
+    image_templates:
+      - ghcr.io/ykzts-technology/redirect:latest
+      - ghcr.io/ykzts-technology/redirect:{{ .Major }}
+      - ghcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}
+      - ghcr.io/ykzts-technology/redirect:{{ .Major }}.{{ .Minor }}.{{ .Patch }}
+    build_flag_templates:
+      - --pull
+      - --label=org.opencontainers.image.created={{.Date}}
+      - --label=org.opencontainers.image.title={{.ProjectName}}
+      - --label=org.opencontainers.image.description="www.example.com to example.com"
+      - --label=org.opencontainers.image.url={{.GitURL}}
+      - --label=org.opencontainers.image.source={{.GitURL}}
+      - --label=org.opencontainers.image.licenses=MIT
+      - --label=org.opencontainers.image.revision={{.FullCommit}}
+      - --label=org.opencontainers.image.version={{.Version}}
+      - --label=org.opencontainers.image.authors="Yamagishi Kazutoshi"

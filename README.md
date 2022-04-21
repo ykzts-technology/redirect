@@ -1,4 +1,4 @@
-# `asia.gcr.io/ykzts-technology/redirect`
+# `ghcr.io/ykzts-technology/redirect`
 
 ## License
 
