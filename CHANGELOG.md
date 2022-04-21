@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.3](https://github.com/ykzts-technology/redirect/compare/v2.0.2...v2.0.3) (2022-04-21)
+
+
+### Bug Fixes
+
+* **goreleaser:** triger releases ([#11](https://github.com/ykzts-technology/redirect/issues/11)) ([0a5457c](https://github.com/ykzts-technology/redirect/commit/0a5457c44b80df9232f62540d04737fcccb12913))
+
 ### [2.0.2](https://github.com/ykzts-technology/redirect/compare/v2.0.1...v2.0.2) (2022-04-21)
 
 
