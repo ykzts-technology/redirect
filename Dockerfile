@@ -1,3 +1,3 @@
-FROM gcr.io/distroless/base
+FROM gcr.io/distroless/static-debian11:nonroot
 COPY redirect /
 ENTRYPOINT ["/redirect"]
