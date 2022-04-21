@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/ykzts-technology/redirect/compare/v2.0.5...v2.1.0) (2022-04-21)
+
+
+### Features
+
+* use static image ([#20](https://github.com/ykzts-technology/redirect/issues/20)) ([3870b37](https://github.com/ykzts-technology/redirect/commit/3870b37435efb82a78a730ca0d5835f630f22799))
+
 ### [2.0.5](https://github.com/ykzts-technology/redirect/compare/v2.0.4...v2.0.5) (2022-04-21)
 
 
