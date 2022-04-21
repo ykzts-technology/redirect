@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://github.com/ykzts-technology/redirect/compare/v2.0.1...v2.0.2) (2022-04-21)
+
+
+### Bug Fixes
+
+* **goreleaser:** disable pull requests ([#9](https://github.com/ykzts-technology/redirect/issues/9)) ([5c07d3e](https://github.com/ykzts-technology/redirect/commit/5c07d3edb301ace198b5891f67d2fd93f14d85c5))
+
 ### [2.0.1](https://github.com/ykzts-technology/redirect/compare/v2.0.0...v2.0.1) (2022-04-21)
 
 
