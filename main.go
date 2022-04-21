@@ -11,7 +11,9 @@ import (
 type handler struct{}
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if strings.HasPrefix(r.Host, "www.") {
+	if r.URL.RequestURI() == "/healthz" {
+		fmt.Fprintf(w, "OK")
+	} else if strings.HasPrefix(r.Host, "www.") {
 		host := strings.TrimPrefix(r.Host, "www.")
 		u := fmt.Sprintf("https://%s%s", host, r.URL.RequestURI())
 
