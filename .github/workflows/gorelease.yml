@@ -1,0 +1,32 @@
+name: gorelease
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  gorelease:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git fetch --force --tags
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18'
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          args: release --rm-dist
+          version: v1.8.3
