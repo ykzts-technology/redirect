@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.4](https://github.com/ykzts-technology/redirect/compare/v2.0.3...v2.0.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* disable permissions ([#15](https://github.com/ykzts-technology/redirect/issues/15)) ([e99c45a](https://github.com/ykzts-technology/redirect/commit/e99c45ad0816d0f7afb6173fb705b164c21b1bfa))
+* use bot token ([#13](https://github.com/ykzts-technology/redirect/issues/13)) ([2cd6ad8](https://github.com/ykzts-technology/redirect/commit/2cd6ad8d766b9afd11f8bf8731fda8dcc2d0d50d))
+
 ### [2.0.3](https://github.com/ykzts-technology/redirect/compare/v2.0.2...v2.0.3) (2022-04-21)
 
 
