@@ -1,8 +1,9 @@
 name: gorelease
 
 on:
-  release:
-    types: [prereleased, released]
+  push:
+    tags:
+      - '*'
 
 jobs:
   gorelease:

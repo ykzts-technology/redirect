@@ -17,3 +17,4 @@ jobs:
         with:
           package-name: redirect
           release-type: go
+          token: ${{ secrets.BOT_GITHUB_TOKEN }}
