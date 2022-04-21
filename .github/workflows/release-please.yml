@@ -8,9 +8,7 @@ on:
 jobs:
   release-please:
     runs-on: ubuntu-20.04
-    permissions:
-      contents: write
-      pull-requests: write
+    permissions: {}
     steps:
       - id: release
         uses: google-github-actions/release-please-action@v3
