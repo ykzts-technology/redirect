@@ -1,3 +1,3 @@
 module github.com/ykzts-technology/redirect
 
-go 1.18
+go 1.19
