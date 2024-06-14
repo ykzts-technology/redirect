@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/ykzts-technology/redirect/compare/v2.1.0...v3.0.0) (2024-06-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* update go version ([#47](https://github.com/ykzts-technology/redirect/issues/47))
+
+### Features
+
+* update go version ([#47](https://github.com/ykzts-technology/redirect/issues/47)) ([f9d860c](https://github.com/ykzts-technology/redirect/commit/f9d860ce60edd2fb7c76bd850ae0e4aa3a8d0a94))
+
 ## [2.1.0](https://github.com/ykzts-technology/redirect/compare/v2.0.5...v2.1.0) (2022-04-21)
 
 
