@@ -16,13 +16,12 @@ builds:
       - amd64
       - arm64
 archives:
-  - rlcp: true
 checksum:
   name_template: checksums.txt
 snapshot:
   name_template: '{{ incpatch .Version }}-next'
 changelog:
-  skip: true
+  disable: true
 dockers:
   - id: redirect
     image_templates:
