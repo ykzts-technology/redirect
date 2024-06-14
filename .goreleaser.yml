@@ -13,9 +13,7 @@ builds:
       - amd64
       - arm64
 archives:
-  - replacements:
-      linux: Linux
-      amd64: x86_64
+  - rlcp: true
 checksum:
   name_template: checksums.txt
 snapshot:
