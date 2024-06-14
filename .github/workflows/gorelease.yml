@@ -1,6 +1,7 @@
 name: gorelease
 
 on:
+  pull_request:
   push:
     tags:
       - '*'
@@ -18,7 +19,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: git fetch --force --tags
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
@@ -29,7 +29,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event_name != 'pull_request'
         uses: goreleaser/goreleaser-action@v6
         with:
-          args: release --rm-dist
+          args: release --clean
+          version: ${{ env.GORELEASER_VERSION }}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event_name == 'pull_request'
+        uses: goreleaser/goreleaser-action@v6
+        with:
+          args: release --clean --skip=publish --snapshot
           version: ${{ env.GORELEASER_VERSION }}
