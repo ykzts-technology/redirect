@@ -2,17 +2,20 @@ name: release-please
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   release-please:
     runs-on: ubuntu-22.04
     permissions: {}
     steps:
+      - id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.RELEASE_PLEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_PLEASE_PRIVATE_KEY }}
       - id: release
         uses: google-github-actions/release-please-action@v4
         with:
-          package-name: redirect
           release-type: go
-          token: ${{ secrets.BOT_GITHUB_TOKEN }}
+          token: ${{ steps.generate_token.outputs.token }}
