@@ -8,6 +8,9 @@ on:
 jobs:
   gorelease:
     runs-on: ubuntu-22.04
+    env:
+      # renovate datasource=github-releases depName=goreleaser/goreleaser packageName=goreleaser versioning=semver
+      GORELEASER_VERSION: v1.8.3
     permissions:
       contents: write
       packages: write
@@ -29,4 +32,4 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           args: release --rm-dist
-          version: v1.8.3
+          version: ${{ env.GORELEASER_VERSION }}
