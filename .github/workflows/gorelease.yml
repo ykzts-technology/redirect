@@ -39,5 +39,5 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: goreleaser/goreleaser-action@v6
         with:
-          args: release --clean --skip=publish
+          args: release --clean --skip=publish --snapshot
           version: ${{ env.GORELEASER_VERSION }}
