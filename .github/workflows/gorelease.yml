@@ -9,7 +9,7 @@ jobs:
   gorelease:
     runs-on: ubuntu-22.04
     env:
-      # renovate datasource=github-releases depName=goreleaser/goreleaser packageName=goreleaser versioning=semver
+      # renovate: datasource=github-releases depName=goreleaser/goreleaser packageName=goreleaser versioning=semver
       GORELEASER_VERSION: v1.8.3
     permissions:
       contents: write
