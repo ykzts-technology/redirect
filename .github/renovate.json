@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customDatasources": {
+    "goreleaser": {
+      "defaultRegistryUrlTemplate": "https://goreleaser.com/static/releases.json",
+      "transformTemplates": "{\"releases\":$.{\"version\":$.tag_name}}"
+    }
+  },
   "extends": [
     "github>inabagumi/renovate-config",
     "customManagers:githubActionsVersions"
