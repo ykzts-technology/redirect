@@ -3,7 +3,7 @@
   "customDatasources": {
     "goreleaser": {
       "defaultRegistryUrlTemplate": "https://goreleaser.com/static/releases.json",
-      "transformTemplates": "{\"releases\":$.{\"version\":$.tag_name}}"
+      "transformTemplates": ["{\"releases\":$.{\"version\":$.tag_name}}"]
     }
   },
   "extends": [
