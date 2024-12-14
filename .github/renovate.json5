@@ -1,4 +1,4 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['github>ykzts-technology/.github//renovate-config'],
+  extends: ['github>ykzts-technology/.github//renovate-config/default'],
 }
