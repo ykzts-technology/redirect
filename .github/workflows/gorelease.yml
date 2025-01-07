@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       # renovate: datasource=custom.goreleaser depName=goreleaser versioning=semver
-      GORELEASER_VERSION: v2.5.0
+      GORELEASER_VERSION: v2.5.1
     permissions:
       contents: write
       packages: write
