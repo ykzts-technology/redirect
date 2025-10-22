@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/ykzts-technology/redirect/compare/v3.0.0...v3.1.0) (2025-10-22)
+
+
+### Features
+
+* **renovate:** update renovate configuration to correct repository path ([#108](https://github.com/ykzts-technology/redirect/issues/108)) ([9ca2650](https://github.com/ykzts-technology/redirect/commit/9ca2650a82cdb356d119e6e84de4d80466166eee))
+
 ## [3.0.0](https://github.com/ykzts-technology/redirect/compare/v2.1.0...v3.0.0) (2024-06-14)
 
 
